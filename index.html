@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure File Access Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header></header>
+  <main>
+    <section id="loginScene">
+      <h1>Secure File Access</h1>
+      <p>Please enter the access password provided.</p>
+      <form>
+        <label for="passwordInput">Password:</label>
+        <input type="password" id="passwordInput" autocomplete="current-password" required aria-required="true">
+        <button type="submit" id="loginButton" class="button button-primary">Access File</button>
+        <p id="loginError" class="error-message" role="alert" aria-live="assertive" style="display: none;"></p>
+      </form>
+    </section>
+
+    <section id="waitingScene">
+      <h2>Generating Your Secure File...</h2>
+      <p>This process takes approximately 5 minutes. Please keep this window open. Your download will appear below automatically.</p>
+      <div class="timer-container">
+        <span id="timerDisplay" aria-label="Time remaining">05:00</span>
+        <span class="timer-label">minutes remaining</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-bar-inner"></div>
+      </div>
+    </section>
+
+    <section id="downloadScene">
+      <h2>File Ready for Download!</h2>
+      <p>Your file 'generated_file.ext' is ready. Click the button below to download.</p>
+      <a href="#" id="downloadLink" role="button" class="button button-primary" download="generated_file.ext">Download Secure File</a>
+      <p class="note">Note: Access is single-use. Please download your file now. This session will expire shortly.</p>
+      <p id="downloadError" class="error-message" role="alert" style="display: none;"></p>
+    </section>
+
+    <section id="busyScene">
+      <h2>Access Temporarily Unavailable</h2>
+      <p>This secure download portal is currently in use by another session. Single-session access ensures data integrity. Please try again later or contact Nick for assistance if you believe this is an error.</p>
+      <footer>
+        &copy; 2025 Secure Portal Inc.
+      </footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
